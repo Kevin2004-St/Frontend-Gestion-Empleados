@@ -21,7 +21,16 @@ export class EmpleadoService {
 
   save(empleado: Empleado): Observable<Object>{
     return this.http.post(this.url, empleado);
-  } 
+  }
 
+  findByCedula(cedula: number): Observable<Empleado> {
+    const url = `${this.url}/${cedula}`; // Concatenar la cédula al endpoint
+    return this.http.get<Empleado>(url);
+  }
+  
+  update(cedula: number, empleado: Empleado): Observable<Object> {
+    const updateUrl = `${this.url}/${cedula}`; 
+    return this.http.put(updateUrl, empleado); 
+  }
 
 }

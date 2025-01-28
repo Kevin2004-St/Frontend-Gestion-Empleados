@@ -1,0 +1,11 @@
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  
+  .btn i {
+    font-size: 1rem;
+  }
+  
