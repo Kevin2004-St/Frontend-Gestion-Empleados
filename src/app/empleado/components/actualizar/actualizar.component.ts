@@ -40,9 +40,11 @@ export class ActualizarComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.empleadoService.update(this.empleado.cedula, this.empleado).subscribe({
+    const cedulaValida = this.empleado.cedula ?? 1;
+    this.empleadoService.update(cedulaValida, this.empleado).subscribe({
       next: () => {
         alert('Empleado actualizado con éxito.');
+        this.router.navigate(['/empleados']);
       },
       error: (err) => {
         console.error('Error al actualizar empleado:', err);

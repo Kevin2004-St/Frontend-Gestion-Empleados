@@ -19,7 +19,7 @@
             <td>{{empleado.email}}</td>
             <td>
               <!-- Botón de actualizar solo con ícono -->
-              <button class="btn btn-primary btn-sm" (click)="navigateToUpdate(empleado.cedula)" title="Actualizar">
+              <button class="btn btn-primary btn-sm" (click)="navigateToUpdate(empleado.cedula ?? 0)" title="Actualizar">
                 <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz de FontAwesome -->
               </button>
             </td>
